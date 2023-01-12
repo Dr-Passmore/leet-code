@@ -40,8 +40,12 @@ Follow-up: Can you come up with an algorithm that is less than O(n2) time comple
 
 class Solution:
     def twoSum(self, nums: list[int], target: int) -> list[int]:
-        check= []
-        for i in nums:
+        for i in range(len(nums)):
+            for j in range(i+1, len(nums)):
+                
+                if (nums[i] + nums[j]) == target:
+                    return i, j
+                '''
             secondValue = target - i
             firstIndex = nums.index(i)
             secondIndex = nums.index(secondValue)
@@ -50,6 +54,7 @@ class Solution:
                 print("error caught")
             else:
                 return firstIndex, secondIndex
+            '''
     #twoSum(nums, target)
 nums = [3,3]
 target = 6
