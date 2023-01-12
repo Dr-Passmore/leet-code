@@ -38,6 +38,8 @@ Only one valid answer exists.
 Follow-up: Can you come up with an algorithm that is less than O(n2) time complexity?
 '''
 
+import unittest
+
 class Solution:
     def twoSum(self, nums: list[int], target: int) -> list[int]:
         for i in range(len(nums)):
@@ -55,7 +57,20 @@ class Solution:
             else:
                 return firstIndex, secondIndex
             '''
-    #twoSum(nums, target)
-nums = [3,3]
-target = 6
-print(Solution.twoSum(0, nums, target))
+    
+    
+class Test(unittest.TestCase):
+    def test_normal_case(self):
+        test = Solution.twoSum(self,[3, 3], 6)
+        self.assertEqual(test, (0,1), "Error")
+    
+    def test_ordered(self):
+        test = Solution.twoSum(self,[2,7,11,15], 9)
+        self.assertEqual(test, (0,1), "Error")
+        
+    def test_unordered(self):
+        test = Solution.twoSum(self,[3,2,4], 6)
+        self.assertEqual(test, (1,2), "Error")
+
+
+unittest.main()
