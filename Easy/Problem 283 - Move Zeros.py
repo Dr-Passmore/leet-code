@@ -5,11 +5,10 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        length = len(nums)
-        for i in nums:
-            if i == 0:
-                nums.remove(i)
-                nums.insert(length-1, i)
+        
+        for v in nums:
+            if v == 0:
+                nums.append(nums.pop(nums.index(v)))
                 
         return nums
                 
